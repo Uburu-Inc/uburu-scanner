@@ -1,16 +1,19 @@
-// src/app/hooks/logout.ts
-import { useRouter } from 'next/navigation';
+'use client';
+
 import { useCallback } from 'react';
-import { deleteCookie } from 'cookies-next'; // or your preferred cookie lib
+import { useRouter } from 'next/navigation';
+import { deleteCookie } from 'cookies-next';
 
 export function useLogout() {
   const router = useRouter();
 
   const logout = useCallback(() => {
-    // Example: remove auth cookie/token
-    deleteCookie('token');
+    // Clear authentication cookie (adjust name if different)
+    deleteCookie('token'); // 'token' is your auth cookie — change as needed
 
-    // Redirect to login or homepage
+    // Optionally clear any app state (e.g., context/store)
+
+    // Redirect to login or home page
     router.push('/login');
   }, [router]);
 
