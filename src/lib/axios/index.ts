@@ -1,13 +1,11 @@
 import Axios, { AxiosError, AxiosRequestHeaders, AxiosResponse } from "axios";
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { useLogout } from "@/app/hooks/logout";
 import { ApiResponse, NetworkPayload, UseAxiosResponse } from "./type";
 
 export function useNetworkRequest({
   hideErrorMessage,
 }: NetworkPayload): UseAxiosResponse {
-  const { logout } = useLogout();
   const [loading, setLoading] = useState<boolean>(false);
 
   let token = "";
@@ -52,7 +50,6 @@ export function useNetworkRequest({
         if (!hideErrorMessage) toast.error("Resource not found");
       } else if (response.status === 401) {
         if (!hideErrorMessage) toast.error(response.data.error.detail);
-        logout();
         return;
       }
       if (!hideErrorMessage) toast.error(response.data.message);
