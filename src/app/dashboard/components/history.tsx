@@ -1,0 +1,60 @@
+import { Container } from "@/components/reusable-components/container";
+import { SearchIcon } from "./search-icon";
+import { ListCard } from "./list-card";
+
+const data = [
+  {
+    date: "2025-06-05T11:05:58.882Z",
+    name: "Williams Alex",
+    description: "Usman Danfodiyo University Teaching Hospital Sokotos",
+  },
+  {
+    date: "2025-06-05T11:05:58.882Z",
+    name: "Williams Alex",
+    description: "Usman Danfodiyo University Teaching Hospital Sokotos",
+  },
+  {
+    date: "2025-06-05T11:05:58.882Z",
+    name: "Williams Alex",
+    description: "Usman Danfodiyo University Teaching Hospital Sokotos",
+  },
+  {
+    date: "2025-06-05T11:05:58.882Z",
+    name: "Williams Alex",
+    description: "Usman Danfodiyo University Teaching Hospital Sokotos",
+  },
+  {
+    date: "2025-06-05T11:05:58.882Z",
+    name: "Williams Alex",
+    description: "Usman Danfodiyo University Teaching Hospital Sokotos",
+  },
+];
+
+export function History() {
+  return (
+    <div className="bg-white py-5">
+      <Container>
+        <div className="flex justify-between">
+          <p className="font-bold">History</p>
+          <button className="text-[#FB5806] underline">View all</button>
+        </div>
+
+        <div className="flex border border-2 rounded-2xl py-1 px-2 mt-3">
+          <SearchIcon />
+          <input type="text" className="outline-none w-full rounded-2xl" />
+        </div>
+
+        <div className="mt-5">
+          {data.map((item, key) => (
+            <ListCard
+              date={item.date}
+              name={item.name}
+              description={item.description}
+              key={key}
+            />
+          ))}
+        </div>
+      </Container>
+    </div>
+  );
+}

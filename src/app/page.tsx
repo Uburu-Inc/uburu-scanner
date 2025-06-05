@@ -1,5 +1,5 @@
-function HomePage() {
+function LoginPage() {
   return <main>Uburu Scanner</main>;
 }
 
-export default HomePage;
+export default LoginPage;
