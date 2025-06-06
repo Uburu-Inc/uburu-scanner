@@ -1,6 +1,7 @@
 import { Container } from "@/components/reusable-components/container";
 import { SearchIcon } from "./search-icon";
 import { ListCard } from "@/components/list-card";
+import Link from "next/link";
 
 export const data = [
   {
@@ -41,7 +42,9 @@ export function History() {
       <Container>
         <div className="flex justify-between">
           <p className="font-bold">History</p>
-          <button className="text-[#FB5806] underline">View all</button>
+          <Link href={"/upload-list-history"} className="text-[#FB5806] underline">
+            View All
+          </Link>
         </div>
 
         <div className="flex border border-2 rounded-2xl py-1 px-2 mt-3">
