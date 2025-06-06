@@ -1,29 +1,34 @@
 import { Container } from "@/components/reusable-components/container";
 import { SearchIcon } from "./search-icon";
-import { ListCard } from "./list-card";
+import { ListCard } from "@/components/list-card";
 
-const data = [
+export const data = [
   {
+    id: "1",
     date: "2025-06-05T11:05:58.882Z",
     name: "Williams Alex",
     description: "Usman Danfodiyo University Teaching Hospital Sokotos",
   },
   {
+    id: "2",
     date: "2025-06-05T11:05:58.882Z",
     name: "Williams Alex",
     description: "Usman Danfodiyo University Teaching Hospital Sokotos",
   },
   {
+    id: "3",
     date: "2025-06-05T11:05:58.882Z",
     name: "Williams Alex",
     description: "Usman Danfodiyo University Teaching Hospital Sokotos",
   },
   {
+    id: "4",
     date: "2025-06-05T11:05:58.882Z",
     name: "Williams Alex",
     description: "Usman Danfodiyo University Teaching Hospital Sokotos",
   },
   {
+    id: "5",
     date: "2025-06-05T11:05:58.882Z",
     name: "Williams Alex",
     description: "Usman Danfodiyo University Teaching Hospital Sokotos",
@@ -47,6 +52,7 @@ export function History() {
         <div className="mt-5">
           {data.map((item, key) => (
             <ListCard
+              id={item.id}
               date={item.date}
               name={item.name}
               description={item.description}
