@@ -6,10 +6,6 @@ type CapturedImage = {
   id: number;
   data: string;
 };
-interface UploadFileProps {
-  one_record_id: string;
-  fileName: string;
-}
 
 export function useUburuPdfScanner() {
   const videoRef = useRef<HTMLVideoElement | null>(null);
