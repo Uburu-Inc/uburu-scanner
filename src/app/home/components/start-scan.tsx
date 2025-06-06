@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export function StartScan() {
   return (
@@ -7,14 +8,16 @@ export function StartScan() {
         Click the button below to scan a patient folder & digitize records.
       </p>
       <div className="flex justify-center py-7">
-        <div className="relative w-[50px] h-[50px]">
-          <Image
-            alt=""
-            src={"/images/init-scan.png"}
-            fill
-            className="absolute"
-          />
-        </div>
+        <Link href={"/scan"}>
+          <div className="relative w-[50px] h-[50px]">
+            <Image
+              alt=""
+              src={"/images/init-scan.png"}
+              fill
+              className="absolute"
+            />
+          </div>
+        </Link>
       </div>
     </div>
   );
